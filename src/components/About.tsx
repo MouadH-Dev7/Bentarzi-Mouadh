@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { cvData } from '../data/cvData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const About: React.FC = () => {
+  const { data, language } = useLanguage();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -18,6 +20,23 @@ export const About: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
   } as const;
 
+  const aboutTranslations = {
+    en: {
+      title: 'About Me',
+      subHeader: 'A passionate and disciplined developer, currently pursuing a Master 1 in Software Engineering after obtaining my Bachelor\'s in Computer Science.'
+    },
+    fr: {
+      title: 'À propos de moi',
+      subHeader: 'Développeur passionné et rigoureux, je poursuis actuellement mon cursus universitaire en Master 1 Génie Logiciel après avoir obtenu ma Licence en Informatique (ISIL).'
+    },
+    ar: {
+      title: 'نبذة عني',
+      subHeader: 'مطور برمجيات شغوف ودقيق، أتابع حالياً دراستي الأكاديمية في الماستر 1 هندسة برمجيات بعد حيازتي شهادة الليسانس في الإعلام الآلي.'
+    }
+  };
+
+  const t = aboutTranslations[language];
+
   return (
     <section id="about" className="py-24 max-w-max-width mx-auto px-gutter relative">
       <motion.div 
@@ -28,24 +47,24 @@ export const About: React.FC = () => {
         className="grid grid-cols-1 lg:grid-cols-12 gap-xl items-center"
       >
         {/* Left Side: Summary Description */}
-        <motion.div variants={itemVariants} className="space-y-6 lg:col-span-7 text-left">
+        <motion.div variants={itemVariants} className="space-y-6 lg:col-span-7 text-start">
           <h2 className="text-4xl md:text-5xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-purple inline-block">
-            À propos de moi
+            {t.title}
           </h2>
           <p className="text-lg md:text-xl text-text-muted leading-relaxed">
-            Développeur passionné et rigoureux, je poursuis actuellement mon cursus universitaire en <strong className="text-white">Master 1 Génie Logiciel</strong> après avoir obtenu ma Licence en Informatique (ISIL). 
+            {t.subHeader}
           </p>
           <p className="text-base md:text-lg text-text-muted leading-relaxed">
-            {cvData.about.description}
+            {data.about.description}
           </p>
-          <div className="pt-2 text-primary font-mono text-sm">
+          <div className="pt-2 text-primary font-mono text-sm text-start" dir="ltr">
             <code>{"const developer = { passion: 'clean_code', focus: ['backend', 'distributed_systems'] };"}</code>
           </div>
         </motion.div>
 
         {/* Right Side: Interactive Stats Grid */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 gap-md lg:col-span-5 w-full">
-          {cvData.about.stats.map((stat, idx) => (
+          {data.about.stats.map((stat, idx) => (
             <motion.div
               key={idx}
               whileHover={{ 

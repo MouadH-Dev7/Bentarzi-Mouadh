@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Server, Laptop, Network } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Services: React.FC = () => {
+  const { data, language } = useLanguage();
+
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
       case 'api': return <Server className="text-primary" size={40} />;
@@ -26,16 +28,33 @@ export const Services: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
   } as const;
 
+  const servicesTranslations = {
+    en: {
+      title: 'Services & Solutions',
+      subtitle: 'Here are the key areas of expertise where I can design and build high-quality software solutions.'
+    },
+    fr: {
+      title: 'Services & Solutions',
+      subtitle: "Voici les domaines d'intervention clés dans lesquels je peux concevoir et développer des solutions informatiques de qualité."
+    },
+    ar: {
+      title: 'الخدمات والحلول',
+      subtitle: 'فيما يلي مجالات الخبرة والتدخل الرئيسية التي يمكنني تصميم وتطوير حلول برمجية عالية الجودة فيها.'
+    }
+  };
+
+  const t = servicesTranslations[language];
+
   return (
     <section className="py-24 bg-surface-container-lowest/30 relative border-t border-b border-border-subtle/10">
       <div className="max-w-max-width mx-auto px-gutter">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-purple inline-block">
-            Services & Solutions
+            {t.title}
           </h2>
           <p className="text-text-muted font-body-md max-w-xl mx-auto">
-            Voici les domaines d'intervention clés dans lesquels je peux concevoir et développer des solutions informatiques de qualité.
+            {t.subtitle}
           </p>
         </div>
 
@@ -47,7 +66,7 @@ export const Services: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-lg"
         >
-          {cvData.services.map((service, idx) => (
+          {data.services.map((service, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}

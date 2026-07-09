@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Database, Code, Settings } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { useLanguage } from '../context/LanguageContext';
 import type { Skill } from '../data/cvData';
 
 export const Skills: React.FC = () => {
-  // Mapping of category icon string to Lucide icons
+  const { data, language } = useLanguage();
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'terminal': return <Terminal className="text-accent-purple" size={24} />;
@@ -37,14 +38,31 @@ export const Skills: React.FC = () => {
     }
   });
 
+  const skillsTranslations = {
+    en: {
+      title: 'Technical Arsenal',
+      subtitle: 'The languages, frameworks, and tools I master and use regularly in my developments.'
+    },
+    fr: {
+      title: 'Arsenal Technique',
+      subtitle: 'Les langages, frameworks et outils que je maîtrise et utilise régulièrement dans mes projets.'
+    },
+    ar: {
+      title: 'الترسانة التقنية',
+      subtitle: 'اللغات وإطارات العمل والأدوات التي أتقنها وأستخدمها بانتظام في مشاريعي.'
+    }
+  };
+
+  const t = skillsTranslations[language];
+
   return (
     <section id="skills" className="py-24 max-w-max-width mx-auto px-gutter relative">
       <div className="text-center mb-16 space-y-4">
         <h2 className="text-4xl md:text-5xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-purple inline-block">
-          Arsenal Technique
+          {t.title}
         </h2>
         <p className="text-text-muted font-body-md max-w-xl mx-auto">
-          Les langages, frameworks et outils que je maîtrise et utilise régulièrement dans mes projets.
+          {t.subtitle}
         </p>
       </div>
 
@@ -55,7 +73,7 @@ export const Skills: React.FC = () => {
         viewport={{ once: true, margin: "-100px" }}
         className="grid grid-cols-1 md:grid-cols-2 gap-lg"
       >
-        {cvData.skills.map((group, idx) => (
+        {data.skills.map((group, idx) => (
           <motion.div
             key={idx}
             variants={cardVariants}
@@ -74,13 +92,13 @@ export const Skills: React.FC = () => {
             <div className="space-y-5 flex-grow">
               {(group.skills as Skill[]).map((skill, sIdx) => (
                 <div key={sIdx} className="space-y-2">
-                  <div className="flex justify-between items-center text-sm font-mono">
+                  <div className="flex justify-between items-center text-sm font-mono" dir="ltr">
                     <span className="text-on-surface-variant font-medium">{skill.name}</span>
                     <span className="text-primary font-semibold">{skill.level}%</span>
                   </div>
                   
                   {/* Skill Track */}
-                  <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden border border-white/5" dir="ltr">
                     <motion.div
                       variants={barVariants(skill.level)}
                       className={`h-full rounded-full bg-gradient-to-r ${

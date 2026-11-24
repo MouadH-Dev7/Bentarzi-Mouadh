@@ -23,15 +23,15 @@ export const About: React.FC = () => {
   const aboutTranslations = {
     en: {
       title: 'About Me',
-      subHeader: 'A passionate and disciplined developer, currently pursuing a Master 1 in Software Engineering after obtaining my Bachelor\'s in Computer Science.'
+      subHeader: 'A passionate and disciplined 22-year-old developer, currently pursuing a Master 2 in Software Engineering after completing my Bachelor\'s and Master 1.'
     },
     fr: {
       title: 'À propos de moi',
-      subHeader: 'Développeur passionné et rigoureux, je poursuis actuellement mon cursus universitaire en Master 1 Génie Logiciel après avoir obtenu ma Licence en Informatique (ISIL).'
+      subHeader: 'Développeur passionné et rigoureux de 22 ans, je poursuis actuellement un Master 2 Génie Logiciel après avoir obtenu ma Licence en Informatique (ISIL) et validé mon Master 1.'
     },
     ar: {
       title: 'نبذة عني',
-      subHeader: 'مطور برمجيات شغوف ودقيق، أتابع حالياً دراستي الأكاديمية في الماستر 1 هندسة برمجيات بعد حيازتي شهادة الليسانس في الإعلام الآلي.'
+      subHeader: 'مطور برمجيات شغوف ودقيق، عمري 22 سنة، أتابع حالياً دراسة الماستر 2 هندسة البرمجيات بعد حيازتي شهادة الليسانس في الإعلام الآلي وإتمام الماستر 1.'
     }
   };
 
@@ -69,8 +69,8 @@ export const About: React.FC = () => {
               key={idx}
               whileHover={{ 
                 scale: 1.05, 
-                borderColor: stat.color === 'primary' ? 'rgba(173, 198, 255, 0.3)' : 'rgba(168, 85, 247, 0.3)',
-                boxShadow: stat.color === 'primary' ? '0 10px 30px -10px rgba(173, 198, 255, 0.15)' : '0 10px 30px -10px rgba(168, 85, 247, 0.15)'
+                borderColor: stat.color === 'primary' ? 'rgba(245, 158, 11, 0.3)' : 'rgba(251, 146, 60, 0.3)',
+                boxShadow: stat.color === 'primary' ? '0 10px 30px -10px rgba(245, 158, 11, 0.15)' : '0 10px 30px -10px rgba(251, 146, 60, 0.15)'
               }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               className="glass-card p-6 md:p-8 rounded-2xl text-center border border-white/5 cursor-default group"

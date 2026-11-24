@@ -1,9 +1,20 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Globe, Copy, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Contact: React.FC = () => {
   const { data, language } = useLanguage();
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(data.contact.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${data.contact.email}`;
+    }
+  };
 
   const contactTranslations = {
     en: {
@@ -13,7 +24,9 @@ export const Contact: React.FC = () => {
       phone: 'PHONE',
       location: 'LOCATION',
       website: 'WEBSITE',
-      githubLabel: 'OR FIND ME ON GITHUB'
+      githubLabel: 'OR FIND ME ON GITHUB',
+      copyEmail: 'Copy email',
+      copied: 'Copied!'
     },
     fr: {
       title: 'Me Contacter',
@@ -22,7 +35,9 @@ export const Contact: React.FC = () => {
       phone: 'TÉLÉPHONE',
       location: 'LOCALISATION',
       website: 'SITE WEB',
-      githubLabel: 'OU RETROUVEZ-MOI SUR GITHUB'
+      githubLabel: 'OU RETROUVEZ-MOI SUR GITHUB',
+      copyEmail: "Copier l'e-mail",
+      copied: 'Copié !'
     },
     ar: {
       title: 'اتصل بي',
@@ -31,7 +46,9 @@ export const Contact: React.FC = () => {
       phone: 'الهاتف',
       location: 'الموقع الجغرافي',
       website: 'الموقع الشخصي',
-      githubLabel: 'أو تجدني على موقع GITHUB'
+      githubLabel: 'أو تجدني على موقع GITHUB',
+      copyEmail: 'نسخ البريد الإلكتروني',
+      copied: 'تم النسخ!'
     }
   };
 
@@ -54,7 +71,7 @@ export const Contact: React.FC = () => {
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Email Card */}
-          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-primary/20 hover:shadow-[0_10px_25px_-10px_rgba(173,198,255,0.1)] transition-all group">
+          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-primary/20 hover:shadow-[0_10px_25px_-10px_rgba(245,158,11,0.1)] transition-all group">
             <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors mx-auto">
               <Mail size={20} />
             </div>
@@ -63,11 +80,20 @@ export const Contact: React.FC = () => {
               <a href={`mailto:${data.contact.email}`} className="text-white hover:text-primary transition-colors font-semibold break-all text-sm block">
                 {data.contact.email}
               </a>
+              <button
+                type="button"
+                onClick={copyEmail}
+                aria-label={t.copyEmail}
+                className="mt-2 inline-flex items-center gap-1.5 text-xs font-mono text-primary hover:text-accent-purple transition-colors"
+              >
+                {copied ? <Check size={14} /> : <Copy size={14} />}
+                {copied ? t.copied : t.copyEmail}
+              </button>
             </div>
           </div>
 
           {/* Phone Card */}
-          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-accent-purple/20 hover:shadow-[0_10px_25px_-10px_rgba(168,85,247,0.1)] transition-all group">
+          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-accent-purple/20 hover:shadow-[0_10px_25px_-10px_rgba(251,146,60,0.1)] transition-all group">
             <div className="w-12 h-12 rounded-full bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple/20 transition-colors mx-auto">
               <Phone size={20} />
             </div>
@@ -80,7 +106,7 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Location Card */}
-          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-primary/20 hover:shadow-[0_10px_25px_-10px_rgba(173,198,255,0.1)] transition-all group">
+          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-primary/20 hover:shadow-[0_10px_25px_-10px_rgba(245,158,11,0.1)] transition-all group">
             <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors mx-auto">
               <MapPin size={20} />
             </div>
@@ -91,7 +117,7 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Website Card */}
-          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-accent-purple/20 hover:shadow-[0_10px_25px_-10px_rgba(168,85,247,0.1)] transition-all group">
+          <div className="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between text-center space-y-4 hover:border-accent-purple/20 hover:shadow-[0_10px_25px_-10px_rgba(251,146,60,0.1)] transition-all group">
             <div className="w-12 h-12 rounded-full bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple/20 transition-colors mx-auto">
               <Globe size={20} />
             </div>

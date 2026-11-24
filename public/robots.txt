@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bentarzimouadh.mouadh-dev.workers.dev/sitemap.xml

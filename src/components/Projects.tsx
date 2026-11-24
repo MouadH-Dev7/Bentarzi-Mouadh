@@ -93,7 +93,7 @@ export const Projects: React.FC = () => {
     const titleLower = title.toLowerCase();
     if (titleLower.includes('pfe') || titleLower.includes('licence') || titleLower.includes('vente immobilière') || titleLower.includes('immobilier') || titleLower.includes('tourisme') || titleLower.includes('documents universitaires') || titleLower.includes('portail') || titleLower.includes('عقارات') || titleLower.includes('جامع')) return <GraduationCap className="text-blue-400" size={24} />;
     if (titleLower.includes('microservices')) return <Workflow className="text-purple-400" size={24} />;
-    if (titleLower.includes('qr code') || titleLower.includes('restaurant') || titleLower.includes('مطعم')) return <QrCode className="text-emerald-400" size={24} />;
+    if (titleLower.includes('qr code') || titleLower.includes('restaurant') || titleLower.includes('مطعم')) return <QrCode className="text-accent-purple" size={24} />;
     if (titleLower.includes('hospital') || titleLower.includes('médicaux') || titleLower.includes('gestion hospitalière') || titleLower.includes('مستشفى')) return <Heart className="text-rose-400" size={24} />;
     if (titleLower.includes('automobile') || titleLower.includes('véhicules') || titleLower.includes('agence automobile') || titleLower.includes('سيارات')) return <Car className="text-amber-400" size={24} />;
     if (titleLower.includes('chatbot') || titleLower.includes('movies bot') || titleLower.includes('bot') || titleLower.includes('agents') || titleLower.includes('jade') || titleLower.includes('بوت')) return <Bot className="text-indigo-400" size={24} />;
@@ -104,7 +104,7 @@ export const Projects: React.FC = () => {
   const getBadgeColors = (badgeType: string) => {
     switch (badgeType) {
       case 'blue': return 'bg-blue-500/10 border-blue-500/30 text-blue-400';
-      case 'teal': return 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400';
+      case 'teal': return 'bg-accent-purple/10 border-accent-purple/30 text-accent-purple';
       case 'amber': return 'bg-amber-500/10 border-amber-500/30 text-amber-400';
       case 'purple': return 'bg-purple-500/10 border-purple-500/30 text-purple-400';
       default: return 'bg-primary/10 border-primary/20 text-primary';
@@ -132,7 +132,7 @@ export const Projects: React.FC = () => {
               onClick={() => setFilter(opt.value)}
               className={`px-5 py-2.5 rounded-full font-mono text-xs font-bold transition-all duration-300 border shrink-0 ${
                 filter === opt.value
-                  ? 'bg-primary text-slate-950 border-primary shadow-[0_4px_20px_rgba(173,198,255,0.25)]'
+                  ? 'bg-primary text-slate-950 border-primary shadow-[0_4px_20px_rgba(245,158,11,0.25)]'
                   : 'bg-white/5 border-white/5 hover:border-primary/30 text-text-muted hover:text-white'
               }`}
             >
@@ -171,7 +171,7 @@ export const Projects: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-80"></div>
                 
                 {/* Float Category Icon */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#020617]/85 border border-white/10 backdrop-blur-md flex items-center justify-center shadow-md">
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#0F172A]/85 border border-white/10 backdrop-blur-md flex items-center justify-center shadow-md">
                   {getProjectIcon(project.title)}
                 </div>
               </div>
@@ -235,13 +235,13 @@ export const Projects: React.FC = () => {
               {/* Close float button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-[#020617]/80 hover:bg-rose-500/20 text-white hover:text-rose-400 border border-white/10 flex items-center justify-center transition-all duration-300"
+                className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-[#0F172A]/80 hover:bg-rose-500/20 text-white hover:text-rose-400 border border-white/10 flex items-center justify-center transition-all duration-300"
               >
                 <X size={16} />
               </button>
 
               {/* Left Column: Media & Actions */}
-              <div className="w-full md:w-5/12 bg-[#020617]/40 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/5">
+              <div className="w-full md:w-5/12 bg-[#0F172A]/40 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/5">
                 <div className="relative h-48 md:h-full min-h-[220px] md:min-h-0 overflow-hidden">
                   <img 
                     src={selectedProject.image} 
@@ -254,7 +254,7 @@ export const Projects: React.FC = () => {
                     <span className={`text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-full border backdrop-blur-md ${getBadgeColors(selectedProject.badgeType)}`}>
                       {selectedProject.badge}
                     </span>
-                    <span className="text-[10px] font-mono text-white bg-[#020617]/60 border border-white/10 px-3 py-1 rounded-full backdrop-blur-md flex items-center gap-1">
+                    <span className="text-[10px] font-mono text-white bg-[#0F172A]/60 border border-white/10 px-3 py-1 rounded-full backdrop-blur-md flex items-center gap-1">
                       <Calendar size={10} />
                       {selectedProject.duration}
                     </span>
@@ -281,7 +281,7 @@ export const Projects: React.FC = () => {
                     }}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent-purple text-surface-deep px-4 py-3 rounded-2xl font-bold font-mono text-sm hover:shadow-[0_0_20px_rgba(173,198,255,0.3)] hover:scale-[1.02] transition-all active:scale-95 text-center"
+                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent-purple text-surface-deep px-4 py-3 rounded-2xl font-bold font-mono text-sm hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-[1.02] transition-all active:scale-95 text-center"
                   >
                     <ExternalLink size={16} /> {t.liveDemo}
                   </a>
@@ -313,7 +313,7 @@ export const Projects: React.FC = () => {
                     <ul className="space-y-2.5">
                       {selectedProject.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-2.5 text-text-muted text-sm leading-relaxed">
-                          <CheckCircle2 className="text-emerald-400 shrink-0 mt-0.5" size={16} />
+                          <CheckCircle2 className="text-accent-purple shrink-0 mt-0.5" size={16} />
                           <span>{feature}</span>
                         </li>
                       ))}

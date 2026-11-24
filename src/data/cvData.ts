@@ -74,7 +74,7 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
     surname: "Bentarzi",
     fullName: "Bentarzi Mouadh",
     title: "Full-Stack & Backend Developer",
-    subTitle: "Master 1 Software Engineering · .NET & REST API Specialist",
+    subTitle: "Master 2 Software Engineering · .NET & REST API Specialist",
     avatarInitials: "BM",
     contact: {
       phone: "0542 05 93 90",
@@ -86,12 +86,12 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
       websiteUrl: "https://bentarzimouadh.mouadh-dev.workers.dev",
     },
     about: {
-      description: "Computer Engineer (Information Systems and Software Engineering) graduated from M'hamed Bougara University of Boumerdès (Bachelor 2025), and currently pursuing a Master 1 in Software Engineering (2025/2026). Passionate about backend development, distributed architecture, and system integration. Strong mastery of C#/.NET Core, Java, Python/Django, and REST API design. National service status: Completed.",
+      description: "22-year-old computer engineer (Information Systems and Software Engineering) graduated from M'hamed Bougara University of Boumerdès (Bachelor 2025), currently pursuing a Master 2 in Software Engineering (2026/2027) after completing Master 1. Passionate about backend development, distributed architecture, and system integration. Strong mastery of C#/.NET Core, Java, Python/Django, and REST API design. National service status: Completed.",
       stats: [
         { value: "13", label: "Real Projects", color: "primary" },
-        { value: "M1", label: "Software Eng.", color: "primary" },
+        { value: "M2", label: "Software Eng.", color: "primary" },
         { value: "15+", label: "Key Skills", color: "purple" },
-        { value: "100%", label: "Clean Code", color: "purple" },
+        { value: "22", label: "Years Old", color: "purple" },
       ]
     },
     typingPhrases: [
@@ -423,9 +423,15 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
     ],
     education: [
       {
+        degree: "Master 2 — Software Engineering",
+        institution: "M'hamed Bougara University of Boumerdès",
+        year: "In progress — 2026 / 2027",
+        icon: "school"
+      },
+      {
         degree: "Master 1 — Software Engineering",
         institution: "M'hamed Bougara University of Boumerdès",
-        year: "In progress — 2025 / 2026",
+        year: "Completed — 2025 / 2026",
         icon: "school"
       },
       {
@@ -461,7 +467,7 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
     surname: "Bentarzi",
     fullName: "Bentarzi Mouadh",
     title: "Développeur Full-Stack & Backend",
-    subTitle: "Master 1 Génie Logiciel · Spécialiste .NET & API REST",
+    subTitle: "Master 2 Génie Logiciel · Spécialiste .NET & API REST",
     avatarInitials: "BM",
     contact: {
       phone: "0542 05 93 90",
@@ -473,12 +479,12 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
       websiteUrl: "https://bentarzimouadh.mouadh-dev.workers.dev",
     },
     about: {
-      description: "Ingénieur en Informatique (Ingénierie des Systèmes d'Information et du Logiciel) diplômé de l'Université M'hamed Bougara de Boumerdès (Licence 2025), et actuellement en Master 1 Génie Logiciel (2025/2026). Passionné par le développement backend, la conception d'architectures distribuées et l'intégration des systèmes. Solide maîtrise de C#/.NET Core, Java, Python/Django et de la conception d'APIs REST. Situation vis-à-vis du service national : Dégagé (Titulaire de la carte de service).",
+      description: "Ingénieur en informatique (Ingénierie des Systèmes d'Information et du Logiciel) âgé de 22 ans, diplômé de l'Université M'hamed Bougara de Boumerdès (Licence 2025) et actuellement en Master 2 Génie Logiciel (2026/2027) après avoir validé le Master 1. Passionné par le développement backend, la conception d'architectures distribuées et l'intégration des systèmes. Solide maîtrise de C#/.NET Core, Java, Python/Django et de la conception d'APIs REST. Situation vis-à-vis du service national : Dégagé (Titulaire de la carte de service).",
       stats: [
         { value: "13", label: "Vrais Projets", color: "primary" },
-        { value: "M1", label: "Génie Logiciel", color: "primary" },
+        { value: "M2", label: "Génie Logiciel", color: "primary" },
         { value: "15+", label: "Compétences clés", color: "purple" },
-        { value: "100%", label: "Code Propre", color: "purple" },
+        { value: "22", label: "Ans", color: "purple" },
       ]
     },
     typingPhrases: [
@@ -832,9 +838,15 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
     ],
     education: [
       {
+        degree: "Master 2 — Génie Logiciel",
+        institution: "Université M'hamed Bougara de Boumerdès",
+        year: "En cours — 2026 / 2027",
+        icon: "school"
+      },
+      {
         degree: "Master 1 — Génie Logiciel",
         institution: "Université M'hamed Bougara de Boumerdès",
-        year: "En cours — 2025 / 2026",
+        year: "Validé — 2025 / 2026",
         icon: "school"
       },
       {
@@ -870,7 +882,7 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
     surname: "بن ترزي",
     fullName: "بن ترزي معاذ",
     title: "مطور تطبيقات ويب متكاملة وخلفية (Full-Stack & Backend)",
-    subTitle: "ماستر 1 هندسة البرمجيات · متخصص في .NET وواجهات البرمجة (API)",
+    subTitle: "ماستر 2 هندسة البرمجيات · متخصص في .NET وواجهات البرمجة (API)",
     avatarInitials: "م ت",
     contact: {
       phone: "0542 05 93 90",
@@ -882,12 +894,12 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
       websiteUrl: "https://bentarzimouadh.mouadh-dev.workers.dev",
     },
     about: {
-      description: "مهندس في الإعلام الآلي (هندسة نظم المعلومات والبرمجيات) خريج جامعة امحمد بوقرة بومرداس (ليسانس 2025)، وحالياً طالب ماستر 1 هندسة البرمجيات (2025/2026). شغوف بتطوير الأنظمة الخلفية، وتصميم البنى التحتية الموزعة، وتكامل الأنظمة. أتمتع بتمكن قوي من لغات وتقنيات C#/.NET Core و Java و Python/Django وتصميم واجهات البرمجة REST API. الوضعية تجاه الخدمة الوطنية: معفى (حائز على بطاقة الخدمة).",
+      description: "مهندس في الإعلام الآلي (هندسة نظم المعلومات والبرمجيات)، عمري 22 سنة، خريج جامعة امحمد بوقرة بومرداس (ليسانس 2025). أتابع حالياً دراسة الماستر 2 هندسة البرمجيات (2026/2027) بعد إتمام الماستر 1. شغوف بتطوير الأنظمة الخلفية، وتصميم البنى التحتية الموزعة، وتكامل الأنظمة. أتمتع بتمكن قوي من لغات وتقنيات C#/.NET Core و Java و Python/Django وتصميم واجهات البرمجة REST API. الوضعية تجاه الخدمة الوطنية: معفى (حائز على بطاقة الخدمة).",
       stats: [
         { value: "13", label: "مشاريع حقيقية", color: "primary" },
-        { value: "M1", label: "هندسة البرمجيات", color: "primary" },
+        { value: "M2", label: "هندسة البرمجيات", color: "primary" },
         { value: "15+", label: "مهارات أساسية", color: "purple" },
-        { value: "100%", label: "كود نظيف", color: "purple" },
+        { value: "22", label: "سنة", color: "purple" },
       ]
     },
     typingPhrases: [
@@ -1219,9 +1231,15 @@ export const cvData: Record<'en' | 'fr' | 'ar', CVData> = {
     ],
     education: [
       {
+        degree: "ماستر 2 — هندسة البرمجيات",
+        institution: "جامعة امحمد بوقرة بومرداس",
+        year: "قيد الدراسة — 2026 / 2027",
+        icon: "school"
+      },
+      {
         degree: "ماستر 1 — هندسة البرمجيات",
         institution: "جامعة امحمد بوقرة بومرداس",
-        year: "قيد الدراسة — 2025 / 2026",
+        year: "تم إتمامه — 2025 / 2026",
         icon: "school"
       },
       {

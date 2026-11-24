@@ -72,8 +72,8 @@ export const Services: React.FC = () => {
               variants={itemVariants}
               whileHover={{ 
                 y: -10, 
-                borderColor: service.color === 'primary' ? 'rgba(173,198,255,0.2)' : 'rgba(168,85,247,0.2)',
-                boxShadow: service.color === 'primary' ? '0 15px 35px -10px rgba(173,198,255,0.1)' : '0 15px 35px -10px rgba(168,85,247,0.1)'
+                borderColor: service.color === 'primary' ? 'rgba(245,158,11,0.2)' : 'rgba(251,146,60,0.2)',
+                boxShadow: service.color === 'primary' ? '0 15px 35px -10px rgba(245,158,11,0.1)' : '0 15px 35px -10px rgba(251,146,60,0.1)'
               }}
               className="glass-card p-8 md:p-10 rounded-3xl border border-white/5 text-center space-y-6 flex flex-col items-center justify-between"
             >

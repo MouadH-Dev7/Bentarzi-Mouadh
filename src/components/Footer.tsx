@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
               />
               <path
                 d="M32 42 L22 50 L32 58 M68 42 L78 50 L68 58"
-                stroke="#A855F7"
+                stroke="#FB923C"
                 strokeWidth="4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -51,10 +51,10 @@ export const Footer: React.FC = () => {
               <text
                 x="50"
                 y="56"
-                fill="#adc6ff"
+                fill="#F59E0B"
                 fontSize="18"
                 fontWeight="900"
-                fontFamily="'Inter', sans-serif"
+                fontFamily="'IBM Plex Sans', 'Noto Sans Arabic', sans-serif"
                 textAnchor="middle"
                 className="tracking-tighter"
               >
@@ -62,8 +62,8 @@ export const Footer: React.FC = () => {
               </text>
               <defs>
                 <linearGradient id="footer-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#adc6ff" />
-                  <stop offset="100%" stopColor="#A855F7" />
+                  <stop offset="0%" stopColor="#F59E0B" />
+                  <stop offset="100%" stopColor="#FB923C" />
                 </linearGradient>
               </defs>
             </svg>
